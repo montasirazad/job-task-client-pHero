@@ -18,7 +18,7 @@ const LogIn = () => {
         <>
             <Header />
 
-            <div className='h-[400px] flex justify-center items-center text-center'>
+            <div className='h-[400px] mt-16 flex justify-center items-center text-center'>
 
 
                 <div>
