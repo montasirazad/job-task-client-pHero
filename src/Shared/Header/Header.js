@@ -1,5 +1,6 @@
 import React from 'react';
 import img1 from '../../images/01.jpg'
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -50,11 +51,13 @@ const Header = () => {
                 {/* <a className="btn">Get started</a> */}
                 <div className="avatar">
                     <div className="w-10 rounded-full">
-                        <img src={img1} alt=''/>
+                        <img src={img1} alt='' />
                     </div>
                 </div>
 
-                <button className='btn btn-outline btn-success btn-sm mx-5'>Log in</button>
+                <Link to='/login'>
+                    <button className='btn btn-outline btn-success btn-sm mx-5'>Log in</button>
+                </Link>
             </div>
         </div>
     );
