@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img1 from '../../images/01.jpg'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Header = () => {
+    const { signedInUser, handleGoogleSignOut } = useContext(AuthContext)
     return (
         <div className="navbar bg-gray-200">
             <div className="navbar-start">
@@ -68,16 +70,21 @@ const Header = () => {
 
 
             <div className="navbar-end mx-7">
-                {/* <a className="btn">Get started</a> */}
-                <div className="avatar">
-                    <div className="w-10 rounded-full">
-                        <img src={img1} alt='' />
-                    </div>
-                </div>
 
-                <Link to='/login'>
-                    <button className='btn btn-outline btn-success btn-sm mx-5'>Log in</button>
-                </Link>
+                {signedInUser.email && <p >Hello,{signedInUser.displayName}</p>}
+
+                {signedInUser.email && <div className="avatar">
+                    <div className="w-10 rounded-full mx-5">
+                        <img src={signedInUser.photoURL} alt='' />
+                    </div>
+                </div>}
+
+                {
+                    signedInUser.email ?
+                        <button className='btn btn-warning' onClick={handleGoogleSignOut}>Log out</button> :
+                        <Link to='/login'>
+                            <button className='btn btn-outline btn-success btn-sm mx-5'>Log in</button>
+                        </Link>}
             </div>
         </div>
     );
