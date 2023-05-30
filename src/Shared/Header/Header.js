@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import img1 from '../../images/01.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
