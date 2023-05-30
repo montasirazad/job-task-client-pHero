@@ -7,7 +7,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Header = () => {
     const { signedInUser, handleGoogleSignOut } = useContext(AuthContext)
     return (
-        <div className="navbar bg-gray-200">
+        <div className="navbar bg-green-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -83,7 +83,7 @@ const Header = () => {
                     signedInUser.email ?
                         <button className='btn btn-warning' onClick={handleGoogleSignOut}>Log out</button> :
                         <Link to='/login'>
-                            <button className='btn btn-outline btn-success btn-sm mx-5'>Log in</button>
+                            <button className='btn btn-outline btn-error btn-sm mx-5'>Log in</button>
                         </Link>}
             </div>
         </div>

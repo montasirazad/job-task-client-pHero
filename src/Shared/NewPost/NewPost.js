@@ -1,6 +1,14 @@
 import React from 'react';
+import axios from "axios";
+
+
 
 const NewPost = () => {
+
+
+    
+
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -11,7 +19,7 @@ const NewPost = () => {
         <div className='p-3 mt-5 text-center '>
             <form onSubmit={handleSubmit}>
                 <h2>Share a beautiful moment</h2>
-                <input type="file"
+                <input type="file" 
                     className="file-input file-input-bordered file-input-xs w-full max-w-xs mt-4" />
                 <br />
                 <input type="text" placeholder='Give a title'
