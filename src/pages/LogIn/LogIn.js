@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
+import Header from '../../Shared/Header/Header';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const LogIn = () => {
     const { register, handleSubmit } = useForm();
+    const { handleGoogleSignIn } = useContext(AuthContext);
 
     const onSubmit = data => {
 
@@ -41,14 +43,14 @@ const LogIn = () => {
                                 className="input input-bordered input-primary w-full max-w-xs" />
                             <br /> <br />
 
-                            <button type='submit' className="input input-bordered input-primary w-full max-w-xs">Log In</button> :
+                            <button type='submit' className="input input-bordered input-primary w-full max-w-xs">Log In</button>
 
                         </form>
                         <br />
 
                         <h3>Or</h3>
 
-                        <button className="btn btn-outline btn-primary my-4">Log in with Google</button>
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary my-4">Log in with Google</button>
 
                     </div>
 
