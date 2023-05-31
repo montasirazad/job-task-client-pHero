@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-
+import { BiFace } from "react-icons/bi";
 
 const Header = () => {
     const { signedInUser, handleGoogleSignOut } = useContext(AuthContext)
@@ -69,14 +69,23 @@ const Header = () => {
 
 
             <div className="navbar-end mx-7">
-
-                {signedInUser.email && <p >Hello,{signedInUser.displayName}</p>}
-
-                {signedInUser.email && <div className="avatar">
-                    <div className="w-10 rounded-full mx-5">
-                        <img src={signedInUser.photoURL} alt='' />
+                {
+                    signedInUser.email && <div className="avatar">
+                        <div className="w-10 rounded-full mx-5">
+                            {
+                                signedInUser.photoURL ? <img src={signedInUser.photoURL} alt='' />
+                                    : <BiFace className='text-4xl' />
+                            }
+                        </div>
                     </div>
-                </div>}
+                }
+
+                {
+                    signedInUser.email && <p className='mx-3'>Hello,{signedInUser.displayName ? signedInUser.displayName
+                        : signedInUser.email}</p>
+                }
+
+
 
                 {
                     signedInUser.email ?

@@ -1,4 +1,7 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+    getAuth, signInWithPopup, GoogleAuthProvider,
+    onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword
+} from "firebase/auth";
 import app from '../Firebase/Firebase.config'
 import React, { createContext, useEffect, useState } from 'react';
 
@@ -34,6 +37,7 @@ const AuthProvider = ({ children }) => {
             });
     }
     console.log('from state', signedInUser);
+
     const handleGoogleSignOut = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
@@ -43,6 +47,39 @@ const AuthProvider = ({ children }) => {
             // An error happened.
         });
     }
+
+    const createNewUserWithEmailAndPassword = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                setSignedInUser(user)
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
+    }
+
+    const signInUserEmailAndPassword = (email, password) => {
+        // const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                setSignedInUser(user)
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
+    };
+
+
 
     useEffect(() => {
         const auth = getAuth();
@@ -62,7 +99,9 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         signedInUser,
         handleGoogleSignIn,
-        handleGoogleSignOut
+        handleGoogleSignOut,
+        createNewUserWithEmailAndPassword,
+        signInUserEmailAndPassword
     }
     return (
         <AuthContext.Provider value={authInfo}>

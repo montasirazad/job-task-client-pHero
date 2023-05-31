@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import Header from '../../Shared/Header/Header';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
 
 
-
+    const { createNewUserWithEmailAndPassword } = useContext(AuthContext)
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-
+        createNewUserWithEmailAndPassword(data.email, data.password)
         console.log(data)
     };
 
@@ -25,13 +26,13 @@ const SignUp = () => {
                     <div className="form-control">
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input type="text"
+                            {/* <input type="text"
                                 {...register("name")}
                                 placeholder="Enter your name"
                                 className="input input-bordered input-primary w-full max-w-xs" />
 
 
-                            <br /> <br />
+                            <br /> <br /> */}
                             <input type="text"
                                 {...register("email")}
                                 placeholder="Enter your e-mail"

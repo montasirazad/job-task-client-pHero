@@ -3,14 +3,15 @@ import { useForm } from "react-hook-form";
 
 
 const NewPost = () => {
-
-
+    
     const { register, handleSubmit } = useForm();
     const imageHostKey = process.env.REACT_APP_image_bb_key;
     console.log(imageHostKey);
+
+
     const onSubmit = data => {
 
-        console.log(data.image[0]);
+        //console.log(data.image[0]);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);

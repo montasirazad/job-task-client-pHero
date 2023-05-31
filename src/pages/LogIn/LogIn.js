@@ -7,10 +7,10 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const LogIn = () => {
     const { register, handleSubmit } = useForm();
-    const { handleGoogleSignIn} = useContext(AuthContext);
+    const { handleGoogleSignIn, signInUserEmailAndPassword } = useContext(AuthContext);
 
     const onSubmit = data => {
-
+        signInUserEmailAndPassword(data.email, data.password)
         console.log(data)
     };
 
