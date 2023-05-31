@@ -41,7 +41,7 @@ const NewPost = () => {
                         imgDetail: imgDetail,
                         like: like
                     }
-                    console.log(allData);
+                    //console.log(allData);
 
                     fetch('http://localhost:5000/api/v1/newpost', {
                         method: "POST",
@@ -57,11 +57,11 @@ const NewPost = () => {
                                 window.location.reload(false)
 
                             }
-                            console.log(data)
+                            //console.log(data)
                         })
 
                 }
-                console.log(imgData);
+                //console.log(imgData);
             })
 
     }

@@ -12,7 +12,7 @@ const Gallery = () => {
             .then(res => res.json())
             .then(data => {
                 setAllPosts(data)
-                console.log(data);
+                // console.log(data);
             })
     }, [])
 

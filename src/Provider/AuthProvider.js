@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
-                console.log(user);
+                //console.log(user);
                 setSignedInUser(user)
 
 
@@ -31,11 +31,11 @@ const AuthProvider = ({ children }) => {
                 const errorMessage = error.message;
                 const email = error.customData.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
-                console.log(errorMessage);
+                //console.log(errorMessage);
 
             });
     }
-    console.log('from state', signedInUser);
+     
 
     const handleGoogleSignOut = () => {
         const auth = getAuth();
@@ -54,12 +54,12 @@ const AuthProvider = ({ children }) => {
                 const user = userCredential.user;
                 setSignedInUser(user)
 
-                console.log(user);
+                //console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                //console.log(errorMessage);
             });
     }
 
@@ -70,12 +70,12 @@ const AuthProvider = ({ children }) => {
                 // Signed in 
                 const user = userCredential.user;
                 setSignedInUser(user)
-                console.log(user);
+                //console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                //console.log(errorMessage);
             });
     };
 

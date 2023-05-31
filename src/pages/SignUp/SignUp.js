@@ -13,7 +13,7 @@ const SignUp = () => {
     const onSubmit = data => {
         createNewUserWithEmailAndPassword(data.email, data.password);
 
-        console.log(data)
+        //console.log(data)
     };
 
 
