@@ -2,35 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PictureCard from '../PictureCard/PictureCard';
 import Header from '../../Shared/Header/Header';
 
-const fakeData = [
-    {
-        name: '',
-        id: 0,
-        image: ''
-    },
-    {
-        name: '',
-        id: 1,
-        image: ''
-    },
-    {
-        name: '',
-        id: 2,
-        image: ''
-    }, {
-        name: '',
-        id: 3,
-        image: ''
-    }, {
-        name: '',
-        id: 4,
-        image: ''
-    }, {
-        name: '',
-        id: 5,
-        image: ''
-    }
-]
 
 const Gallery = () => {
 
