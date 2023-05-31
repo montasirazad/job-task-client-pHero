@@ -1,11 +1,11 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import app from '../Firebase/Firebase.config'
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
+import app from '../Firebase/Firebase.config';
+
 
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
-
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
                 const user = result.user;
                 console.log(user);
                 setSignedInUser(user)
+
 
             }).catch((error) => {
                 const errorCode = error.code;
@@ -52,6 +53,7 @@ const AuthProvider = ({ children }) => {
                 // Signed in 
                 const user = userCredential.user;
                 setSignedInUser(user)
+
                 console.log(user);
             })
             .catch((error) => {

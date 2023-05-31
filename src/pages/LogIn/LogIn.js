@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import Header from '../../Shared/Header/Header';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Header from '../../Shared/Header/Header';
 
 
 const LogIn = () => {
     const { register, handleSubmit } = useForm();
     const { handleGoogleSignIn, signInUserEmailAndPassword } = useContext(AuthContext);
 
+
     const onSubmit = data => {
-        signInUserEmailAndPassword(data.email, data.password)
+        signInUserEmailAndPassword(data.email, data.password);
+
         console.log(data)
     };
 

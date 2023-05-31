@@ -4,10 +4,7 @@ import LogIn from "../pages/LogIn/LogIn";
 import SignUp from "../pages/SignUp/SignUp";
 import Gallery from "../pages/Gallery/Gallery";
 import UploadPic from "../pages/UploadPic/UploadPic";
-
-
-
-
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -32,10 +29,11 @@ const router = createBrowserRouter([
     {
         path: '/gallery',
         element: <Gallery />
-    },
-    {
+    }, {
         path: '/share-a-image',
-        element: <UploadPic />
+        element: <PrivateRoute><UploadPic /></PrivateRoute>,
+
+
     }
 ]);
 
