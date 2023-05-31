@@ -48,7 +48,7 @@ const Gallery = () => {
     return (
         <>
             <Header />
-            <div className='flex flex-wrap justify-around m-8'>
+            <div className='flex flex-wrap justify-center m-8'>
                 {
                     allPosts.map(allPost => <PictureCard key={allPost._id} allPost={allPost} />)
                 }
