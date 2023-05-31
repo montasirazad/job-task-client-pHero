@@ -5,6 +5,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import Gallery from "../pages/Gallery/Gallery";
 import UploadPic from "../pages/UploadPic/UploadPic";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyAccount from "../pages/MyAccount/MyAccount";
+import ImageDetails from "../pages/ImageDetails/ImageDetails";
 
 
 
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute><UploadPic /></PrivateRoute>,
 
 
+    },
+    {
+        path: '/my-account',
+        element: <MyAccount />
+    },
+    {
+        path: '/details/:id',
+        element: <ImageDetails />
     }
 ]);
 

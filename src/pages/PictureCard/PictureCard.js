@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AiFillHeart } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 const PictureCard = (props) => {
 
-    const { imageUrl, imgTitle, name, like } = props.allPost;
+    const { imageUrl, imgTitle, name, like, _id } = props.allPost;
     const [likes, setLikes] = useState(like);
     const [likeColor, setLikeColor] = useState('');
 
@@ -37,7 +38,8 @@ const PictureCard = (props) => {
                     </div>
 
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn more</button>
+                        <Link to={`/a}`}><button className="btn btn-primary">Learn more</button></Link>
+
                     </div>
                 </div>
             </div>
