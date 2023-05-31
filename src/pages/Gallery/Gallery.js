@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PictureCard from '../PictureCard/PictureCard';
 import Header from '../../Shared/Header/Header';
 
@@ -33,12 +33,24 @@ const fakeData = [
 ]
 
 const Gallery = () => {
+
+    const [allPosts, setAllPosts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/v1/newpost')
+            .then(res => res.json())
+            .then(data => {
+                setAllPosts(data)
+                console.log(data);
+            })
+    }, [])
+
     return (
         <>
             <Header />
-            <div className='flex flex-wrap justify-around'>
+            <div className='flex flex-wrap justify-around m-8'>
                 {
-                    fakeData.map((x) => <PictureCard key={x.id} x={x} />)
+                    allPosts.map(allPost => <PictureCard key={allPost._id} allPost={allPost} />)
                 }
             </div>
         </>

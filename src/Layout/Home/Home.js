@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
-import NewPost from '../../Shared/NewPost/NewPost';
+import Header from '../../Shared/Header/Header';
 import Banner from '../../pages/Banner/Banner';
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
             <Header />
             <div>
                 <Banner />
-                <NewPost />
+                {/* <NewPost /> */}
                 <Footer />
             </div>
         </>

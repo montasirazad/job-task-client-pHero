@@ -14,25 +14,21 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <Link to='/'>
+                            <Link to='/gallery'>
                                 Gallery
                             </Link>
                         </li>
 
-                        {/* <li tabIndex={0}>
-                            <a className="justify-between">
-                                Parent
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
 
-                        </li> */}
                         <li>
                             <Link to='/about'>
                                 About
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to='/share-a-image'>
+                                Share a image
                             </Link>
                         </li>
                     </ul>
@@ -63,6 +59,12 @@ const Header = () => {
                             About
                         </Link>
                     </li>
+
+                    <li>
+                        <Link to='/share-a-image'>
+                            Share a image
+                        </Link>
+                    </li>
                 </ul>
             </div>
 
@@ -73,7 +75,7 @@ const Header = () => {
                     signedInUser.email && <div className="avatar">
                         <div className="w-10 rounded-full mx-5">
                             {
-                                signedInUser.photoURL ? <img src={signedInUser.photoURL} alt='' />
+                                signedInUser ? <img src={signedInUser.photoURL} alt='' />
                                     : <BiFace className='text-4xl' />
                             }
                         </div>
@@ -81,7 +83,7 @@ const Header = () => {
                 }
 
                 {
-                    signedInUser.email && <p className='mx-3'>Hello,{signedInUser.displayName ? signedInUser.displayName
+                    signedInUser.email && <p className='mx-2'>Hello,{signedInUser.displayName ? signedInUser.displayName
                         : signedInUser.email}</p>
                 }
 
