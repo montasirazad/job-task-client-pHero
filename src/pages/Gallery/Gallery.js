@@ -8,7 +8,7 @@ const Gallery = () => {
     const [allPosts, setAllPosts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/newpost')
+        fetch('https://job-task-server-rust.vercel.app/api/v1/newpost')
             .then(res => res.json())
             .then(data => {
                 setAllPosts(data)

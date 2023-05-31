@@ -43,7 +43,7 @@ const NewPost = () => {
                     }
                     //console.log(allData);
 
-                    fetch('http://localhost:5000/api/v1/newpost', {
+                    fetch('https://job-task-server-rust.vercel.app/api/v1/newpost', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'

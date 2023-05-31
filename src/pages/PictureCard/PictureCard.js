@@ -38,7 +38,7 @@ const PictureCard = (props) => {
                     </div>
 
                     <div className="card-actions justify-end">
-                        <Link to={`/a}`}><button className="btn btn-primary">Learn more</button></Link>
+                        <Link to='/details/:id'><button className="btn btn-primary">Learn more</button></Link>
 
                     </div>
                 </div>
